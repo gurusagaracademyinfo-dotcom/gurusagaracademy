@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gurusagar Academy</title>
+
+<link rel="stylesheet" href="gurusagar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav">
+    <div class="nav-left">
+        <img src="logo.png" class="logo">
+
+        <div class="brand-text">
+            <span class="main-text">Gurusagar</span>
+            <span class="sub-text">Academy</span>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    
+    <div class="hero-left">
+        <h1>From Basics to <span>Brilliance</span></h1>
+
+        <p>Trusted learning since 1992. Helping students grow with clarity and confidence.</p>
+
+        <a href="tel:9895946839" class="btn primary">Call Now</a>
+
+        <div class="hero-stats">
+            <div>
+                <h3 class="counter" data-target="34">0</h3>
+                <span>Years</span>
+            </div>
+            <div>
+                <h3 class="counter" data-target="10000" data-suffix="+">0</h3>
+                <span>Students</span>
+            </div>
+            <div>
+                <h3 class="counter" data-target="99">0</h3>
+                <span>Success %</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="hero-card">
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li>All Subjects Coaching</li>
+                <li>Personal Attention</li>
+                <li>Regular Tests</li>
+                <li>Proven Results</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+<!-- FEATURES -->
+<section class="features">
+    <div class="card">
+        <h3>All Subjects</h3>
+        <p>Complete academic support for school students.</p>
+    </div>
+
+    <div class="card">
+        <h3>Expert Teaching</h3>
+        <p>Simple explanations that make learning easy.</p>
+    </div>
+
+    <div class="card">
+        <h3>Regular Tests</h3>
+        <p>Track progress and improve consistently.</p>
+    </div>
+
+    <div class="card">
+        <h3>Personal Attention</h3>
+        <p>Small batches for better focus and results.</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+    <h2 class="section-title">Our Classes</h2>
+    <div class="images">
+        <img src="img1.png">
+        <img src="img2.png">
+        <img src="img3.png">
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <h2 class="section-title">What Students Say</h2>
+
+    <div class="testimonial">
+        “Classes are very easy to understand and helped improve my marks.”
+    </div>
+
+    <div class="testimonial">
+        “I gained confidence and exams became less stressful.”
+    </div>
+</section>
+
+<!-- MAP -->
+<section class="map">
+    <h2 class="section-title">Find Us</h2>
+    <iframe 
+    src="https://www.google.com/maps?q=Gurusagar%20Tution%20Centre%20Kallambalam&output=embed">
+    </iframe>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Gurusagar Academy, Kallambalam</span>
+    </div>
+
+    <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>9895946839</span>
+    </div>
+</section>
+
+<footer class="footer">
+    © 2026 Gurusagar Academy
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919895946839" class="whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+window.onload = function () {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const suffix = counter.getAttribute('data-suffix') || "";
+        let count = 0;
+
+        const update = () => {
+            const increment = target / 60;
+
+            if (count < target) {
+                count += increment;
+                counter.innerText = Math.floor(count) + suffix;
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+
+        update();
+    });
+};
+</script>
+</body>
+</html>
